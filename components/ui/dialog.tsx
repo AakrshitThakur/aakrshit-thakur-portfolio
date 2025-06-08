@@ -10,13 +10,27 @@ const Dialog = DialogPrimitive.Root;
 
 const DialogTrigger = DialogPrimitive.Trigger;
 
+// const DialogPortal = ({
+//   className,
+//   ...props
+// }: DialogPrimitive.DialogPortalProps) => (
+//   <DialogPrimitive.Portal className={cn(className)} {...props} />
+// );
+// DialogPortal.displayName = DialogPrimitive.Portal.displayName;
+
 const DialogPortal = ({
   className,
+  children,
   ...props
-}: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal className={cn(className)} {...props} />
+}: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Portal> & {
+  className?: string;
+}) => (
+  <DialogPrimitive.Portal {...props}>
+    <div className={cn(className)}>{children}</div>
+  </DialogPrimitive.Portal>
 );
 DialogPortal.displayName = DialogPrimitive.Portal.displayName;
+
 
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
