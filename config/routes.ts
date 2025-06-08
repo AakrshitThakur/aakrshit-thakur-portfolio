@@ -5,8 +5,8 @@ export const routesConfig: any = {
       href: "/skills",
     },
     {
-      title: "Experience",
-      href: "/experience",
+      title: "Education",
+      href: "/education",
     },
     {
       title: "Career",
