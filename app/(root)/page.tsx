@@ -99,8 +99,8 @@ export default function IndexPage() {
           <div className="mt-4 max-w-[42rem] text-center">
             <p className="leading-normal text-muted-foreground text-sm sm:text-base">
               I am Aakrshit Thakur, a recent BCA graduate and fresher full-stack
-              developer skilled in the MERN stack. I've built real-time and
-              data-driven web apps
+              developer skilled in the MERN stack. I have built real-time and
+              data-driven web apps.
             </p>
           </div>
 
