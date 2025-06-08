@@ -29,7 +29,7 @@ export const EducationArr: EducationInterface[] = [
     websiteLink: "https://ggdsd.ac.in/",
     startDate: new Date("2022-09-01"),
     endDate: new Date("2025-05-31"),
-    companyLogoImg: "/education/ggdsd-logo.png",
+    companyLogoImg: "/education/ggdsd-logo.jpg",
     descriptionDetails: {
       paragraphs: [
         "Goswami Ganesh Dutta Sanatan Dharma (GGDSD) College, located in Sector 32, Chandigarh, is a premier institution affiliated with Panjab University. Established in 1973 in memory of Goswami Ganesh Dutta Ji, the college was founded by Pt. Mohan Lal Ji, a former minister of Punjab, along with Prof. Roshan Lal Verma Ji and other visionaries. Their mission was to create a center of excellence that integrates academic rigor with the ethical and spiritual values of Sanatan Dharma.",
@@ -49,7 +49,7 @@ export const EducationArr: EducationInterface[] = [
     websiteLink: "http://davuna.org/",
     startDate: new Date("2016-01-4"),
     endDate: new Date("2022-07-0"),
-    companyLogoImg: "/education/dav-logo.png",
+    companyLogoImg: "/education/dav-logo.jpg",
     descriptionDetails: {
       paragraphs: [
         "DAV Centenary Public School, Una, established in 1986, is a co-educational English medium senior secondary school affiliated with the Central Board of Secondary Education (CBSE). Managed by the DAV College Managing Committee (DAVCMC), it stands as the largest CBSE-affiliated DAV institution in Himachal Pradesh, catering to over 2,600 students.",

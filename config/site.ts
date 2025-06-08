@@ -3,7 +3,7 @@ export const siteConfig = {
   authorName: "Aakrshit Thakur",
   username: "aakrshit-thakur",
   description: "Aakrshit Thakur's portfolio website",
-  url: "https://nbarkiya.xyz/",
+  url: "https://aakrshit-thakur-portfolio-7ya2.vercel.app/",
   links: {
     github: "https://github.com/AakrshitThakur",
     linkedin: "https://www.linkedin.com/in/aakrshit-thakur-14433627b/",
@@ -11,7 +11,7 @@ export const siteConfig = {
   ogImage: "/AakrshitThakurPassportPic.jpeg",
   iconIco: "/AakrshitThakurPassportPic.jpeg",
   logoIcon:
-    "/AakrshitThakurPassportPic.jpeg",
+    "/logo.jpg",
   keywords: [
     "Aakrshit Thakur",
     "Full Stack Developer",
