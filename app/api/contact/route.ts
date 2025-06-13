@@ -1,8 +1,8 @@
 // Import the Contact model for handling contact form submissions
-import Contact from "@/api-modals/Contact.ts";
+import Contact from "@/api-modals/Contact";
 
 // Import the MongoDB connection utility
-import dbConnect from "@/lib/mongodbConn.ts";
+import dbConnect from "@/lib/mongodbConn";
 
 // Import types and utilities from Next.js for handling requests and responses
 import { NextRequest, NextResponse } from "next/server";
