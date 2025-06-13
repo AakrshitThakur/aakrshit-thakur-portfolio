@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useModalStore } from "@/hooks/use-modal-store";
+import { Icons } from "../common/icons";
 
 // Define the form schema using Zod for validation
 const formSchema = z.object({
@@ -48,30 +49,31 @@ export function ContactForm() {
 
   // Submit handler function for form submission
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // To be completed soon!
-    // try {
-    //   // Send form data to API route
-    //   const response = await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(values),
-    //   });
-    //   // Reset form fields after submission
-    //   form.reset();
-    //   // Show modal if submission was successful
-    //   if (response.status === 200) {
-    //     storeModal.onOpen({
-    //       title: "Thank you!",
-    //       description:
-    //         "Your message has been received! I appreciate your contact and will get back to you shortly.",
-    //       icon: Icons.successAnimated,
-    //     });
-    //   }
-    // } catch (err) {
-    //   console.log("Err!", err); // Log any error that occurs during form submission
-    // }
+    try {
+      // Send form data to API route
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      // Reset form fields after submission
+      form.reset();
+      // Show modal if submission was successfula
+
+      console.log(response.status);
+      if (response.status === 200) {
+        storeModal.onOpen({
+          title: "Thank you!",
+          description:
+            "Your message has been received! I appreciate your contact and will get back to you shortly.",
+          icon: Icons.successAnimated,
+        });
+      }
+    } catch (err) {
+      console.log("Err!", err); // Log any error that occurs during form submission
+    }
   }
 
   return (

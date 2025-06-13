@@ -1,39 +1,41 @@
-import { NextResponse } from "next/server";
+// Import the Contact model for handling contact form submissions
+import Contact from "@/api-modals/Contact.ts";
 
-// Handler for POST requests
-export async function POST(req: Request) {
-  // Get the Google Form base submission link from environment variables
-  const formLink = process.env.GOOGLE_FORM_LINK;
-  
-  // Return a 500 error if the form link is not configured
-  if (!formLink) {
-    return new NextResponse("Please configure the env variables", {
-      status: 500,
-    });
-  }
+// Import the MongoDB connection utility
+import dbConnect from "@/lib/mongodbConn.ts";
 
-  // Get field IDs for each form input from environment variables
-  // These should match the input names in your Google Form
-  const fieldIdName = process.env.GOOGLE_FORM_FIELD_ID_NAME;
-  const fieldIdEmail = process.env.GOOGLE_FORM_FIELD_ID_EMAIL;
-  const fieldIdMessage = process.env.GOOGLE_FORM_FIELD_ID_MESSAGE;
-  const fieldIdSocial = process.env.GOOGLE_FORM_FIELD_ID_SOCIAL;
+// Import types and utilities from Next.js for handling requests and responses
+import { NextRequest, NextResponse } from "next/server";
 
+// Handler for POST requests to the contact form endpoint
+export async function POST(req: NextRequest) {
   try {
-    // Parse the JSON body from the request
-    const body = await req.json();
-    const { name, message, social, email } = body;
+    // Parse the incoming request body as JSON
+    const fields = await req.json();
 
-    // Send form submission as a GET request to the Google Form
-    const res = await fetch(
-      `${formLink}/formResponse?${fieldIdName}=${name}&${fieldIdEmail}=${email}&${fieldIdMessage}=${message}&${fieldIdSocial}=${social}`
-    );
+    // Validate required fields: name, email, and message must be present
+    if (!fields.name || !fields.email || !fields.message)
+      return new NextResponse(JSON.stringify({ status: 400 }));
 
-    // Respond with a success message
-    return NextResponse.json("Success!");
-  } catch (error) {
-    // Log and return a 500 error if something goes wrong
+    // Attempt to establish a database connection
+    const conn = await dbConnect();
+
+    // If the database connection fails, respond with a 500 Internal Server Error
+    if (!conn) return new NextResponse(JSON.stringify({ status: 500 }));
+
+    // Create a new Contact document using the submitted fields
+    const newContact = new Contact(fields);
+
+    // Save the new contact document to the database and log the result
+    console.log(await newContact.save());
+
+    // Respond with a 200 OK status to indicate success
+    return new NextResponse(JSON.stringify({ status: 200 }));
+  } catch (error: any) {
+    // Log any errors that occurred during processing
     console.log(error);
-    return new NextResponse("Internal error", { status: 500 });
+
+    // Return the error's status code (if available), else response may be undefined/incomplete
+    return new NextResponse(JSON.stringify({ status: error.status }));
   }
 }
