@@ -4,7 +4,7 @@ declare global {
   var mongoose: {
     conn: any;
     promise: Promise<any> | null;
-  } | undefined;
+  };
 }
 
 const MONGODB_URI = process.env.MONGODB_URI;
