@@ -37,7 +37,7 @@ export const Projects = () => {
 
               <div className="flex justify-between items-center">
                 <a
-                  href="https://ai-resume-analyzer-ac4y.vercel.app/"
+                  href="https://ai-resume-analyzer-gold.vercel.app/"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
                   View Project →
@@ -116,14 +116,14 @@ export const Projects = () => {
                     </span>
                   )
                 )}
-                <div className="flex justify-between items-center">
-                  <a
-                    href="https://inventorymanager2025.netlify.app/"
-                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                  >
-                    View Project →
-                  </a>
-                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <a
+                  href="https://inventorymanager2025.netlify.app/"
+                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                >
+                  View Project →
+                </a>
               </div>
             </div>
           </div>
