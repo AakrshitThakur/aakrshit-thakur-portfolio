@@ -30,14 +30,14 @@ const PROJECTS = [
     href: "https://snap-link-frontend.vercel.app/",
   },
 ];
-
+// md:grid-cols-[350px_350px] lg:grid-cols-[450px_450px]
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-[75vh] w-full flex items-center justify-center">
-      <RevealOnScroll>
-        <div className="w-full max-w-5xl mx-auto space-y-3 sm:space-y-4 md:space-y-5">
+    <section id="projects" className="min-h-[75vh] w-full flex items-center justify-center p-3 sm:p-4 md:p-5">
+      <RevealOnScroll className="shrink-0 w-full max-w-3xl sm:max-w-4xl md:max-w-5xl">
+        <div className="w-full mx-auto space-y-3 sm:space-y-4 md:space-y-5">
           <h2 className="text-[#605dff] text-3xl sm:text-4xl font-bold text-center">PROJECTS</h2>
-          <div className="grid grid-cols-[32rem] md:grid-cols-[350px_350px] lg:grid-cols-[450px_450px] gap-5">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,500px))] justify-center gap-5">
             {PROJECTS.map((project) => (
               <article
                 key={project.id}

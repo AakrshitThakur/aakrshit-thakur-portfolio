@@ -28,8 +28,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="h-[75vh] w-full flex justify-center items-center">
-      <RevealOnScroll className="w-full max-w-lg">
+    <section id="contact" className="h-[65vh] w-full flex justify-center items-center p-3 sm:p-4 md:p-5">
+      <RevealOnScroll className="w-full max-w-sm sm:max-w-md md:max-w-lg">
         <div className="mx-auto space-y-3 sm:space-y-4 md:space-y-5">
           <h2 className="text-[#605dff] text-3xl sm:text-4xl font-bold text-center">GET IN TOUCH</h2>
           <form className="space-y-5 text-sm sm:text-base" onSubmit={handleOnSubmit}>

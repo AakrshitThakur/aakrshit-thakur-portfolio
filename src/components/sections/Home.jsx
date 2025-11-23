@@ -2,9 +2,9 @@ import RevealOnScroll from "../RevealOnScroll";
 
 export default function Home() {
   return (
-    <section id="home" className="h-[55vh] w-full flex justify-center items-center">
-      <RevealOnScroll>
-        <div className="flex flex-col justify-center items-center gap-3 whitespace-normal p-5 sm:p-6 md:p-7 rounded-xl">
+    <section id="home" className="h-[55vh] w-full flex justify-center items-center p-3 sm:p-4 md:p-5">
+      <RevealOnScroll className="w-full max-w-sm sm:max-w-lg md:max-w-3xl">
+        <div className="flex flex-col justify-center items-center gap-3 p-5 sm:p-6 md:p-7 rounded-xl">
           {/* heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center bg-gradient-to-r from-[#605dff] to-stone-300 bg-clip-text text-transparent leading-none">
             Hi, I&apos;m Aakrshit Thakur
