@@ -26,12 +26,12 @@ export default function LoadingScreen({ onComplete }) {
 
   return (
     <div className="color-base-100 color-base-content fixed inset-0 z-50 flex flex-col items-center justify-center gap-3">
-      <p className="text-3xl text-center font-bold">
+      <p className="text-xl sm:text-2xl md:text-3xl text-center font-bold bg-gradient-to-r from-[#605dff] to-stone-300 bg-clip-text text-transparent">
         {text} <span className="animate-blink"> |</span>
       </p>
 
       <div className="w-[200px] h-[2px] bg-gray-700 relative overflow-hidden rounded-[50%]">
-        <div className="animate-loading-bar w-[45%] h-full bg-[#605dff]"></div>
+        <div className="animate-loading-bar w-[45%] h-full color-warning"></div>
       </div>
     </div>
   );
