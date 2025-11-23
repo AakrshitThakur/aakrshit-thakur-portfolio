@@ -1,35 +1,30 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+import RevealOnScroll from "../RevealOnScroll";
 
-export const Home = () => {
+export default function Home() {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative"
-    >
+    <section id="home" className="h-[55vh] w-full flex justify-center items-center relative">
       <RevealOnScroll>
-        <div className="z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
-            Hi, I'm Aakrshit Thakur
+        <div className="flex flex-col justify-center items-center gap-3 p-5 sm:p-6 md:p-7 rounded-xl">
+          {/* heading */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center bg-gradient-to-r from-[#605dff] to-stone-300 bg-clip-text text-transparent leading-none">
+            Hi, I&apos;m Aakrshit Thakur
           </h1>
-
-          <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
-            A Full-stack developer proficient in MERN stack, Next.js,
-            TypeScript, etc. Demonstrated ability to build and maintain
-            full-lifecycle web applications, backed by strong academic
-            achievements.
+          {/* description */}
+          <p className="text-center text-base max-w-md">
+            A Full-stack developer proficient in MERN stack, Next.js, TypeScript, etc. Demonstrated ability to build and
+            maintain full-lifecycle web applications, backed by strong academic achievements.
           </p>
-          <div className="flex justify-center space-x-4">
+          {/* go to links */}
+          <div className="flex gap-3">
             <a
               href="#projects"
-              className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.4)]"
+              className="color-success color-success-content py-3 px-5 rounded font-medium overflow-hidden transition hover:-translate-y-0.5"
             >
               View Projects
             </a>
-
             <a
               href="#contact"
-              className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 
-             hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.2)] hover:bg-blue-500/10"
+              className="color-primary-hover color-primary-content-hover py-3 px-5 rounded font-medium transition-all duration-200"
             >
               Contact Me
             </a>
@@ -38,4 +33,4 @@ export const Home = () => {
       </RevealOnScroll>
     </section>
   );
-};
+}

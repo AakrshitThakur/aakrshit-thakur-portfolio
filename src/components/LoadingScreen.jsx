@@ -1,36 +1,43 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-export const LoadingScreen = ({ onComplete }) => {
+export default function LoadingScreen({ onComplete }) {
   const [text, setText] = useState("");
-  const fullText = "Please wait...";
+  const displayText = "Greetings from Aakrshit Thakur";
 
+  // animate display text
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
-      setText(fullText.substring(0, index));
+      setText(displayText.substring(0, index));
       index++;
 
-      if (index > fullText.length) {
+      // close set-interval & exec on-complete func when full text is displayed
+      if (index > displayText.length) {
         clearInterval(interval);
-
         setTimeout(() => {
           onComplete();
         }, 1000);
       }
-    }, 100);
+    }, 75);
 
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, []);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
-      <div className="mb-4 text-4xl font-mono font-bold">
-        {text} <span className="animate-blink ml-1"> | </span>
-      </div>
+    <div className="color-base-100 color-base-content fixed inset-0 z-50 flex flex-col items-center justify-center gap-3">
+      <p className="text-3xl text-center font-bold">
+        {text} <span className="animate-blink"> |</span>
+      </p>
 
-      <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+      <div className="w-[200px] h-[2px] bg-gray-700 relative overflow-hidden rounded-[50%]">
+        <div className="animate-loading-bar w-[45%] h-full bg-[#605dff]"></div>
       </div>
     </div>
   );
+}
+
+// defining props-types
+LoadingScreen.propTypes = {
+  onComplete: PropTypes.func.isRequired,
 };
