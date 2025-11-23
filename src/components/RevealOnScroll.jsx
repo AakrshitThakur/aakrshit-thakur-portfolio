@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 
-export default function RevealOnScroll({ children }) {
+export default function RevealOnScroll({ children, className }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function RevealOnScroll({ children }) {
   }, []);
 
   return (
-    <div ref={ref} className="reveal shrink-0">
+    <div ref={ref} className={`reveal ${className}`}>
       {children}
     </div>
   );
@@ -32,4 +32,5 @@ export default function RevealOnScroll({ children }) {
 
 RevealOnScroll.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };

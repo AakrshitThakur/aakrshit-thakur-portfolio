@@ -10,7 +10,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
     <nav className="bg-[rgba(21,25,30,0.65)] color-base-content backdrop-blur-xs w-full sticky top-0 z-40">
       <div className="max-w-5xl mx-auto px-3">
         <div className="flex justify-between items-center h-15">
-          <a href="#home" className="font-mono text-xl sm:text-2xl font-bold">
+          <a href="#home" className="font-mono text-xl sm:text-2xl font-bold whitespace-nowrap mr-1">
             aakrshit-thakur<span className="text-[#605dff]">-tech</span>
           </a>
 

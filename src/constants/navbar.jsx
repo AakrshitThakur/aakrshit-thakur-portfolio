@@ -23,11 +23,6 @@ const ANCHOR_TAGS = [
     target: "_blank"
   },
   {
-    href: "#home",
-    className: `color-primary-hover color-primary-content-hover px-2 py-1 rounded-sm transition-all duration-200 cursor-pointer`,
-    children: "Home",
-  },
-  {
     href: "#about",
     className:
       "color-primary-hover color-primary-content-hover px-2 py-1 rounded-sm transition-all duration-200 cursor-pointer",

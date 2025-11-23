@@ -33,18 +33,18 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center">
+    <section id="projects" className="min-h-[75vh] w-full flex items-center justify-center">
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4 md:space-y-5">
+        <div className="w-full max-w-5xl mx-auto space-y-3 sm:space-y-4 md:space-y-5">
           <h2 className="text-[#605dff] text-3xl sm:text-4xl font-bold text-center">PROJECTS</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-[32rem] md:grid-cols-[350px_350px] lg:grid-cols-[450px_450px] gap-5">
             {PROJECTS.map((project) => (
               <article
                 key={project.id}
                 className="color-base-300 color-base-content whitespace-normal rounded-xl transition hover:-translate-y-0.5 space-y-3 sm:space-y-4 md:space-y-5 p-5"
               >
                 {/* heading */}
-                <h3 className="text-xl underline underline-offset-3 decoration-0 font-bold">{project.title}</h3>
+                <h3 className="text-xl underline underline-offset-3 decoration-1 font-bold">{project.title}</h3>
                 {/* description */}
                 <p className="text-sm">{project.description}</p>
                 {/* project related keywords */}
